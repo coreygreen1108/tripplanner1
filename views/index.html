@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container page-content">
+	<div class="row">
+		<div class="col-xs-9">
+			<div id="map-canvas"> 
+			</div> 
+		</div>
+		<div class="col-xs-3">
+			<div class="sidebar">
+				<div class="box">
+					<div class="color-box">		
+						<div class="Hotels">
+						<form action = "PUT">
+							<label for="Hotels">Hotels:</label><br>
+							<select class = "dropdown" name = "Hotels">
+							{% for hotel in hotels %}
+								<option value="{{hotel.name}}">{{hotel.name}}</option>
+							{% endfor %}
+							</select>
+							<input class = "submit" type = "submit" value = " ">
+						</form>
+						</div>
+							<div class="rest-box">
+								<label for="Restaurants">Restaurants:</label><br>
+								<select class = "dropdown" name = "Restaurants">
+								{% for rest in restaurants %}
+									<option value="{{rest.name}}">{{rest.name}}</option>
+								{% endfor %}
+								</select>
+								<input class = "submit" type = "submit" value = " ">
+							</div>
+							<div class="act-box">
+							<label for="Activities">Activities:</label><br>
+							<select class = "dropdown" name = "Activities">
+							{% for act in activities %}
+								<option value="{{act.name}}">{{act.name}}</option>
+							{% endfor %}
+							</select>
+							<input class = "submit" type = "submit" value = " ">
+							</div>
+						</div>				
+				</div>
+				<div class="box small-box">
+					<div class="color-box">
+						<div class="day-number">
+							<p>   Day 2</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="box">
+					<div class="color-box">
+						<div class="content-box">
+							<input class = "submit" type = "submit" value = "1">
+							<input class = "submit" type = "submit" value = "2">
+							<input class = "submit" type = "submit" value = "+">
+							<br><br>
+							<div class = "myhotels">
+							<p> My Hotels </p>
+								<p class="selected-thing">Andaz Wall St</p>
+							</div>
+							<div class = "myrests">
+							<p> My Restaurants</p>
+							</div>
+							<div class = "myacts">
+							<p> My Activities </p>
+								<p class="selected-thing">Ground Zero</p>
+				
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
